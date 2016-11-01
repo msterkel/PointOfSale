@@ -14,7 +14,7 @@ function addItem()
         document.getElementById("price").value = "";
          setCookie("preTax", runningTotal, 8);
   }
-
+}
   //  update newItem to its value cast as a number
   // update runningTotal to be its value plus newItem
 
@@ -22,7 +22,7 @@ function addItem()
   // update the innerHTML of the span with the id "subtotal" to be dollars
   // update the value of the input with the id "price" to be an empty string
   // update a cookie called "preTax" with the value of runningTotal
-}
+
 
 //takes a number and gives a string with the number displayed as USD currency
 function asCurrency(val)
