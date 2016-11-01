@@ -5,15 +5,19 @@ function addItem()
   var newItem;
   newItem = document.getElementById("price").value;
   if(isNaN(newItem)){
-    window.alert("Enter a price as a number")
+    window.alert("Enter a price as a number");
   }
-  //else {
+  else { newItem = Number(newItem) ;
+    runningTotal = runningTotal + newItem;
+     var dollars = asCurrency(runningTotal);
+      document.getElementById("subtotal").innerHTML= dollars;
+        document.getElementById("price").value = "";
+         setCookie("preTax", runningTotal, 8);
+  }
 
-  //}
-
-  // update newItem to its value cast as a number
+  //  update newItem to its value cast as a number
   // update runningTotal to be its value plus newItem
-  // create a variable called dollars
+
   // call asCurrency() by with the value of runningTotal and assign the return value to dollars
   // update the innerHTML of the span with the id "subtotal" to be dollars
   // update the value of the input with the id "price" to be an empty string
@@ -24,6 +28,7 @@ function addItem()
 function asCurrency(val)
 {
   return "$" + val.toFixed(2);
+
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
